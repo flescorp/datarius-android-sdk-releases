@@ -1,3 +1,57 @@
 # datarius-android-sdk-releases
 
 Public releases for AudienceM Android SDK
+
+## Installation
+
+
+### Step 1. Add the Analytics dependency to your build.gradle
+
+The recommended way to install the library for Android is with a build system like Gradle. This makes it dead simple to upgrade versions and add integrations. The library is distributed via Github Packages. 
+
+Add repository to your settings.gradle:
+```
+dependencyResolutionManagement {
+    repositories {
+        maven {
+            url 'https://maven.pkg.github.com/flescorp/datarius-android-sdk-releases'
+            credentials {
+                username = "flescompany"
+                password = "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"
+            }
+        }
+    }
+}
+```
+
+Add the analytics module to your app/build.gradle:
+```
+dependencies {
+    implementation 'kr.co.fles.datarius.kotlin:android:1.10.3-SNAPSHOT'
+}
+```
+
+### Step 2. Initialize the Client
+
+We recommend initializing the client in your Application subclass.
+
+```
+// Create an analytics client with the given application context and Segment write key.
+// NOTE: in android, application context is required to pass as the second parameter.
+Analytics(applicationContext) {
+    // Automatically track Lifecycle events
+    trackApplicationLifecycleEvents = true
+    flushAt = 3
+    flushInterval = 10
+}
+```
+
+Automatically tracking lifecycle events (Application Opened, Application Installed, Application Updated) is optional, but highly recommended to hit the ground running with core events!
+
+### Step 3. Add Permissions to AndroidManifest.xml
+
+```
+<!-- Required for internet. -->
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+```
