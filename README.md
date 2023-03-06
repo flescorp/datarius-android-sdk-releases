@@ -36,7 +36,7 @@ dependencies {
 We recommend initializing the client in your Application subclass.
 
 ```
-// Create an analytics client with the given application context and Segment write key.
+// Create an analytics client with the given application context.
 // NOTE: in android, application context is required to pass as the second parameter.
 Analytics(applicationContext) {
     // Automatically track Lifecycle events
