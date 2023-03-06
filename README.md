@@ -63,6 +63,8 @@ Automatically tracking lifecycle events (Application Opened, Application Install
 
 ## Usage
 
+See a complete Kotlin Android project at https://github.com/flescorp/datarius-android-sample
+
 ### Identify
 
 Java `Analytics.with(context).identify("a user's id", new Traits().putName("홍길동"), null);`
