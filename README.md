@@ -4,6 +4,11 @@ Public releases for AudienceM Android SDK
 
 ## Installation
 
+### Step 0. Create github token
+
+Go to https://github.com/settings/tokens and create a classic token with read:packages permission.
+
+Use that token below
 
 ### Step 1. Add the Analytics dependency to your build.gradle
 
@@ -16,8 +21,8 @@ dependencyResolutionManagement {
         maven {
             url 'https://maven.pkg.github.com/flescorp/datarius-android-sdk-releases'
             credentials {
-                username = "flescompany"
-                password = "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"
+                username = "<your github username>"
+                password = "<your github token>"
             }
         }
     }
