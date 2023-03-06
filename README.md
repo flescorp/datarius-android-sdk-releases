@@ -32,7 +32,7 @@ dependencyResolutionManagement {
 Add the analytics module to your app/build.gradle:
 ```
 dependencies {
-    implementation 'kr.co.fles.datarius.kotlin:android:1.10.3-SNAPSHOT'
+    implementation 'kr.co.fles.datarius.kotlin:android:1.10.3'
 }
 ```
 
