@@ -55,3 +55,47 @@ Automatically tracking lifecycle events (Application Opened, Application Install
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
+
+## Tracking
+
+### Identify
+
+Java `Analytics.with(context).identify("a user's id", new Traits().putName("홍길동"), null);`
+
+Kotlin `Analytics.with(context).identify("a user's id", Traits().putName("홍길동"), null)`
+
+### Track
+
+Kotlin
+```
+Analytics.with(context).track("Product Viewed", Properties().putValue("name", "Moto 360"))
+
+```
+
+###  Screen
+
+Kotlin
+```
+// category "Feed" and a property "Feed Length"
+Analytics.with(context).screen("Feed", Properties().putValue("Feed Length", "26"))
+
+// no category, name "Photo Feed" and a property "Feed Length"
+Analytics.with(context).screen(null, "Photo Feed", Properties().putValue("Feed Length", "26"))
+
+// category "Smartwatches", name "Purchase Screen", and a property "sku"
+Analytics.with(context).screen("Smartwatches", "Purchase Screen", Properties().putValue("sku", "13d31"))
+```
+
+### Group
+
+Kotlin
+```
+Analytics.with(context).group("a user's id", "a group id", Traits().putEmployees(20))
+```
+
+### Alias
+Kotlin
+```
+Analytics.with(context).alias(newId)
+Analytics.with(context).identify(newId)
+```
