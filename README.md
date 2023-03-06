@@ -56,7 +56,7 @@ Automatically tracking lifecycle events (Application Opened, Application Install
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
 
-## Tracking
+## Usage
 
 ### Identify
 
